@@ -1,13 +1,13 @@
 apiVersion: devices.kubeedge.io/v1alpha2
 kind: Device
 metadata:
-  name: led-ble-instance-01
+  name: smoke_ble_instances_001
   labels:
-    description: led-light
-    model: led-ble
+    description: mq2
+    model: smoke_ble
 spec:
   deviceModelRef:
-    name: led-ble
+    name: smoke_ble
   nodeSelector:
     nodeSelectorTerms:
     - matchExpressions:
@@ -19,17 +19,17 @@ spec:
     bluetooth:
       macAddress: "8C:CE:4E:83:25:52"
   propertyVisitors:
-  - propertyName: "power-status"
+  - propertyName: smoke
     bluetooth:
-      characteristicUUID: ff01
+      characteristicUUID: fe01
+  - propertyName: alarm
+    bluetooth:
+      characteristicUUID: fe02
       dataWrite:
         "ON": "0x01"   #Here "ON" refers to the value of the property "temperature-enable" and [1] refers to the corresponding []byte value to be written into the device when the value of temperature-enable is "ON"
         "OFF": "0x00"
-  - propertyName: gpio-pin-number
-    bluetooth:
-      characteristicUUID: ff02
     
 status:
   twins:
-    - propertyName: power-status
-    - propertyName: gpio-pin-number
+    - propertyName: smoke
+    - propertyName: alarm
