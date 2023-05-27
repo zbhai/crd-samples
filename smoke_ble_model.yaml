@@ -1,20 +1,20 @@
 apiVersion: devices.kubeedge.io/v1alpha2
 kind: DeviceModel
 metadata:
- name: smoke-ble
- namespace: default
+  name: smoke-ble
+  namespace: default
 spec:
- properties:
-  - name: smoke
-    description: indicates the temperature value in degree Celsius
-    type:
-      float:
-        defaultValue: 0
-        unit: "Celsius"
-        accessMode: ReadOnly
-  - name: alarm
-    description:
-    type:
-      string:
-        defaultValue: "OFF"
-        accessMode: ReadOnly
+  properties:
+    - name: smoke
+      description: indicates the temperature value in degree Celsius
+      type:
+        float:
+          defaultValue: 0
+          unit: "Celsius"
+          accessMode: ReadOnly
+    - name: alarm
+      description:
+      type:
+        string:
+          defaultValue: "OFF"
+          accessMode: ReadOnly

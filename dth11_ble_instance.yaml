@@ -10,22 +10,22 @@ spec:
     name: dth11-ble
   nodeSelector:
     nodeSelectorTerms:
-    - matchExpressions:
-      - key: 'kubernetes.io/hostname'
-        operator: In
-        values:
-        - jetson-edge          #pls give your edge node name
+      - matchExpressions:
+          - key: "kubernetes.io/hostname"
+            operator: In
+            values:
+              - jetson #pls give your edge node name
   protocol:
     bluetooth:
       macAddress: "8C:CE:4E:83:25:52"
   propertyVisitors:
-  - propertyName: temperature
-    bluetooth:
-      characteristicUUID: fd01
-  - propertyName: humidity
-    bluetooth:
-      characteristicUUID: fd02
-    
+    - propertyName: temperature
+      bluetooth:
+        characteristicUUID: fd01
+    - propertyName: humidity
+      bluetooth:
+        characteristicUUID: fd02
+
 status:
   twins:
     - propertyName: temperature
