@@ -5,6 +5,12 @@ metadata:
   namespace: default
 spec:
   properties:
+    - name: power-status
+      description:
+      type:
+        string:
+          defaultValue: "off"
+          accessMode: ReadWrite
     - name: temperature
       description: indicates the temperature value in degree Celsius
       type:
@@ -18,12 +24,6 @@ spec:
         float:
           defaultValue: 0
           accessMode: ReadOnly
-    - name: power-status
-      description:
-      type:
-        string:
-          defaultValue: "off"
-          accessMode: ReadWrite
     - name: buzzer-status
       description:
       type:

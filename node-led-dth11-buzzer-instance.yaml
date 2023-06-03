@@ -19,19 +19,24 @@ spec:
     bluetooth:
       macAddress: "8C:CE:4E:83:25:52"
   propertyVisitors:
-    - propertyName: temperature
+    - propertyName: power-status
       bluetooth:
         characteristicUUID: fd01
-    - propertyName: humidity
+        dataWrite:
+          "ON": "0x01" #Here "ON" refers to the value of the property "temperature-enable" and [1] refers to the corresponding []byte value to be written into the device when the value of temperature-enable is "ON"
+          "OFF": "0x00"
+    - propertyName: temperature
       bluetooth:
         characteristicUUID: fd02
-    - propertyName: power-status
+    - propertyName: humidity
       bluetooth:
         characteristicUUID: fd03
     - propertyName: buzzer-status
       bluetooth:
         characteristicUUID: fd04
-
+        dataWrite:
+          "ON": "0x01" #Here "ON" refers to the value of the property "temperature-enable" and [1] refers to the corresponding []byte value to be written into the device when the value of temperature-enable is "ON"
+          "OFF": "0x00"
 status:
   twins:
     - propertyName: temperature
