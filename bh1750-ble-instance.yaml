@@ -1,13 +1,13 @@
 apiVersion: devices.kubeedge.io/v1alpha2
 kind: Device
 metadata:
-  name: dth11-ble-instance-01
+  name: bh1750-ble-instance-01
   labels:
-    description: dth11
-    model: dth11-ble
+    description: bh1750
+    model: bh1750-ble-model
 spec:
   deviceModelRef:
-    name: dth11-ble
+    name: bh1750-ble-model
   nodeSelector:
     nodeSelectorTerms:
       - matchExpressions:
@@ -19,14 +19,11 @@ spec:
     bluetooth:
       macAddress: "8C:CE:4E:83:25:52"
   propertyVisitors:
-    - propertyName: temperature
+    - propertyName: lux
       bluetooth:
         characteristicUUID: fd01
-    - propertyName: humidity
-      bluetooth:
-        characteristicUUID: fd02
+
 
 status:
   twins:
-    - propertyName: temperature
-    - propertyName: humidity
+    - propertyName: lux

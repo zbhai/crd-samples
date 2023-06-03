@@ -1,0 +1,15 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  name: bh1750-ble-model
+  namespace: default
+spec:
+  properties:
+    - name: lux
+      description: indicates the temperature value in degree Celsius
+      type:
+        float:
+          defaultValue: 0
+          unit: "lux"
+          accessMode: ReadOnly
+

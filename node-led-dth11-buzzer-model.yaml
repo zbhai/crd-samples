@@ -1,0 +1,32 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  name: node-led-dth11-buzzer-model
+  namespace: default
+spec:
+  properties:
+    - name: temperature
+      description: indicates the temperature value in degree Celsius
+      type:
+        float:
+          defaultValue: 0
+          unit: "Celsius"
+          accessMode: ReadOnly
+    - name: humidity
+      description:
+      type:
+        float:
+          defaultValue: 0
+          accessMode: ReadOnly
+    - name: power-status
+      description:
+      type:
+        string:
+          defaultValue: "off"
+          accessMode: ReadWrite
+    - name: buzzer-status
+      description:
+      type:
+        string:
+          defaultValue: "off"
+          accessMode: ReadWrite

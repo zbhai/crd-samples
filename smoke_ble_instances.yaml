@@ -14,7 +14,7 @@ spec:
           - key: "kubernetes.io/hostname"
             operator: In
             values:
-              - jetson #pls give your edge node name
+              - jetsonnano.edge #pls give your edge node name
   protocol:
     bluetooth:
       macAddress: "8C:CE:4E:83:25:52"

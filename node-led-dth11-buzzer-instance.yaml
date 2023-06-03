@@ -1,13 +1,13 @@
 apiVersion: devices.kubeedge.io/v1alpha2
 kind: Device
 metadata:
-  name: dth11-ble-instance-01
+  name: node-led-dth11-buzzer-instance-01
   labels:
-    description: dth11
-    model: dth11-ble
+    description: led-dth11-buzzer
+    model: node-led-dth11-buzzer-model
 spec:
   deviceModelRef:
-    name: dth11-ble
+    name: node-led-dth11-buzzer-model
   nodeSelector:
     nodeSelectorTerms:
       - matchExpressions:
@@ -25,8 +25,16 @@ spec:
     - propertyName: humidity
       bluetooth:
         characteristicUUID: fd02
+    - propertyName: power-status
+      bluetooth:
+        characteristicUUID: fd03
+    - propertyName: buzzer-status
+      bluetooth:
+        characteristicUUID: fd04
 
 status:
   twins:
     - propertyName: temperature
     - propertyName: humidity
+    - propertyName: power-status
+    - propertyName: buzzer-status
